@@ -1,0 +1,233 @@
+
+/* ===== Global Styles ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: linear-gradient(180deg, #075985, #0f172a);
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 30px 18px;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 25px;
+}
+
+.sidebar a {
+    display: block;
+    text-decoration: none;
+    color: #e0f2fe;
+    padding: 15px 18px;
+    margin: 8px 0;
+    border-radius: 9px;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+.sidebar a:hover {
+    background: #0284c7;
+    color: white;
+    padding-left: 25px;
+}
+
+/* ===== Main Content ===== */
+.main {
+    margin-left: 250px;
+    padding: 30px;
+}
+
+/* ===== Header ===== */
+header {
+    background: white;
+    padding: 25px 30px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+}
+
+header h1 {
+    color: #075985;
+    font-size: 25px;
+}
+
+header p {
+    color: #64748b;
+    font-weight: 600;
+}
+
+/* ===== Page Sections ===== */
+.page {
+    background: white;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+}
+
+.page h2 {
+    color: #075985;
+    margin-bottom: 25px;
+}
+
+/* ===== Dashboard Cards ===== */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 22px;
+    margin-bottom: 35px;
+}
+
+.card {
+    background: linear-gradient(135deg, #e0f2fe, #f0f9ff);
+    padding: 25px;
+    border-radius: 12px;
+    border-left: 5px solid #0284c7;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+    color: #475569;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.card h1 {
+    color: #0369a1;
+    font-size: 32px;
+}
+
+/* ===== Forms ===== */
+form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+input, select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+    background: #fff;
+}
+
+input:focus, select:focus {
+    border-color: #0284c7;
+    box-shadow: 0 0 0 3px rgba(2,132,199,0.12);
+}
+
+label {
+    font-weight: 600;
+    color: #475569;
+}
+
+button {
+    padding: 13px 20px;
+    border: none;
+    background: #0284c7;
+    color: white;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #075985;
+}
+
+/* ===== Tables ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+thead {
+    background: #075985;
+    color: white;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 14px;
+}
+
+tbody tr:hover {
+    background: #f0f9ff;
+}
+
+/* ===== Hidden Pages ===== */
+.hidden {
+    display: none;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .sidebar h2 {
+        margin-bottom: 15px;
+    }
+
+    .sidebar a {
+        display: inline-block;
+        padding: 10px;
+    }
+
+    .main {
+        margin-left: 0;
+        padding: 15px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .page {
+        padding: 18px;
+        overflow-x: auto;
+    }
+
+    form {
+        grid-template-columns: 1fr;
+    }
+}
