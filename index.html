@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediCare - Hospital Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>🏥 MediCare</h2>
+
+        <a href="#" onclick="showPage('dashboard')">🏠 Dashboard</a>
+        <a href="#" onclick="showPage('patients')">👨‍⚕️ Patients</a>
+        <a href="#" onclick="showPage('doctors')">🩺 Doctors</a>
+        <a href="#" onclick="showPage('appointments')">📅 Appointments</a>
+        <a href="#" onclick="showPage('billing')">💳 Billing</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+
+        <header>
+            <h1 id="pageTitle">Hospital Dashboard</h1>
+            <p>Welcome, Admin 👋</p>
+        </header>
+
+        <!-- Dashboard -->
+        <section id="dashboard" class="page">
+            <h2>Dashboard Overview</h2>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>Total Patients</h3>
+                    <h1 id="totalPatients">0</h1>
+                </div>
+
+                <div class="card">
+                    <h3>Total Doctors</h3>
+                    <h1 id="totalDoctors">0</h1>
+                </div>
+
+                <div class="card">
+                    <h3>Appointments</h3>
+                    <h1 id="totalAppointments">0</h1>
+                </div>
+
+                <div class="card">
+                    <h3>Total Revenue</h3>
+                    <h1 id="totalRevenue">₹0</h1>
+                </div>
+            </div>
+
+            <h2>Recent Appointments</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Patient</th>
+                        <th>Doctor</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="dashboardAppointments"></tbody>
+            </table>
+        </section>
+
+        <!-- Patients -->
+        <section id="patients" class="page hidden">
+            <h2>Patient Management</h2>
+
+            <form id="patientForm">
+                <input type="text" id="patientName" placeholder="Patient Name" required>
+                <input type="number" id="patientAge" placeholder="Age" min="1" required>
+                <select id="patientGender" required>
+                    <option value="">Select Gender</option>
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Other</option>
+                </select>
+                <input type="tel" id="patientPhone" placeholder="Phone Number" required>
+                <button type="submit">Add Patient</button>
+            </form>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Gender</th>
+                        <th>Phone</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="patientTable"></tbody>
+            </table>
+        </section>
+
+        <!-- Doctors -->
+        <section id="doctors" class="page hidden">
+            <h2>Doctor Management</h2>
+
+            <form id="doctorForm">
+                <input type="text" id="doctorName" placeholder="Doctor Name" required>
+                <input type="text" id="specialization" placeholder="Specialization" required>
+                <input type="tel" id="doctorPhone" placeholder="Phone Number" required>
+                <button type="submit">Add Doctor</button>
+            </form>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Doctor Name</th>
+                        <th>Specialization</th>
+                        <th>Phone</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="doctorTable"></tbody>
+            </table>
+        </section>
+
+        <!-- Appointments -->
+        <section id="appointments" class="page hidden">
+            <h2>Appointment Management</h2>
+
+            <form id="appointmentForm">
+                <select id="appointmentPatient" required>
+                    <option value="">Select Patient</option>
+                </select>
+
+                <select id="appointmentDoctor" required>
+                    <option value="">Select Doctor</option>
+                </select>
+
+                <input type="date" id="appointmentDate" required>
+                <select id="appointmentStatus">
+                    <option>Pending</option>
+                    <option>Confirmed</option>
+                    <option>Completed</option>
+                    <option>Cancelled</option>
+                </select>
+
+                <button type="submit">Book Appointment</button>
+            </form>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Patient</th>
+                        <th>Doctor</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="appointmentTable"></tbody>
+            </table>
+        </section>
+
+        <!-- Billing -->
+        <section id="billing" class="page hidden">
+            <h2>Billing Management</h2>
+
+            <form id="billingForm">
+                <select id="billingPatient" required>
+                    <option value="">Select Patient</option>
+                </select>
+
+                <input type="number" id="billAmount" placeholder="Amount (₹)" min="1" required>
+
+                <select id="paymentStatus">
+                    <option>Paid</option>
+                    <option>Pending</option>
+                </select>
+
+                <button type="submit">Generate Bill</button>
+            </form>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Bill ID</th>
+                        <th>Patient</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="billingTable"></tbody>
+            </table>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
